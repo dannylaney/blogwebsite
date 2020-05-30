@@ -1,0 +1,14 @@
+<%- include("partials/header") -%>
+
+<h1>Blog</h1>
+<p><%= homeStartingContent %></p>
+
+<% posts.forEach(function(post) { %>
+<div class="">
+  <h1><%= post.postTitle %></h1>
+  <p><%= post.postBody.substring(0, 100) + "..." %></p>
+  <a href="/posts/<%= _.kebabCase(post.postTitle) %>" class="readMore">Read More</a>
+</div>
+<% }); %>
+
+<%- include("partials/footer") -%>
